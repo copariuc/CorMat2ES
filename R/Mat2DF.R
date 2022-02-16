@@ -37,8 +37,6 @@ Mat2DF <- function(Study, Mat.Cor, Vars, n.X, s.Y, N, low.diag = T, diag.val = T
   # Returning results
   return(list(
     cor.mat = mat.cor,
-    var.names = Vars,
-    alphas = diag(mat.cor),
     effects = es[-1,]))
 }
 
