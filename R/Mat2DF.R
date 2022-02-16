@@ -7,6 +7,7 @@ library(lavaan); library(esc); library(stringr)
 #' @description
 #' This function converts form a correlation matrix to an effect size object
 #'
+
 Mat2DF <- function(Study, Mat.Cor, Vars, n.X, s.Y, N, low.diag = T, diag.val = T){
   # Getting corelation matrix
   mat.cor <- lavaan::getCov(Mat.Cor, names = Vars, lower = low.diag, diagonal = diag.val)
@@ -39,5 +40,3 @@ Mat2DF <- function(Study, Mat.Cor, Vars, n.X, s.Y, N, low.diag = T, diag.val = T
     cor.mat = mat.cor,
     effects = es[-1,]))
 }
-
-
