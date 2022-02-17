@@ -1,0 +1,12 @@
+if (!require(esc)) install.packages("esc")
+library(esc)
+
+#' Conversion from a Beta coefficient to an effect size object
+#' @description
+#' This function converts form a beta coefficient to an effect size object
+#'
+beta2es <-function(study, type, beta, sd, n1, n2, X, Y, Rxx = 0, Ryy = 0){
+  g <- esc::esc_beta(beta = beta, sdy = sd, grp1n = n1, grp2n = n2, es.type = type, study = study)
+  es <- cbind(g, X, Rxx, Y, Ryy)
+  return(es)
+}

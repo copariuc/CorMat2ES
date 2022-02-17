@@ -3,11 +3,11 @@ if (!require(lavaan)) install.packages("lavaan")
 if (!require(esc)) install.packages("esc")
 if (!require(stringr)) install.packages("stringr")
 library(lavaan); library(esc); library(stringr)
+
 #' Conversion from a correlation matrix to an effect size object
 #' @description
 #' This function converts form a correlation matrix to an effect size object
 #'
-
 Mat2DF <- function(Study, Mat.Cor, Vars, n.X, s.Y, N, low.diag = T, diag.val = T){
   # Getting corelation matrix
   mat.cor <- lavaan::getCov(Mat.Cor, names = Vars, lower = low.diag, diagonal = diag.val)

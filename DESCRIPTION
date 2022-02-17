@@ -1,7 +1,7 @@
 Package: CorMat2Es
 Type: Package
 Title: Converts a correlation matrix in an effect size object
-Version: 0.1.1
+Version: 0.1.2
 Author: Cristian Opariuc-Dan
 Maintainer: Cristian Opariuc-Danr <copariuc@gmail.com>
 Description: More about what it does (maybe more than one line)
