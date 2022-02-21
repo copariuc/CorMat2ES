@@ -16,7 +16,7 @@ beta2es <-function(Study, Type, Beta, SDy, N1, N2, Y, X, Ryy, Rxx){
     rec <- rec + 1
   }
   colnames(es) <- c("study", "es", "weight", "sample.size", "se", "var", "ci.lo", "ci.hi", "measure",
-                        "X", "Rxx", "Y", "Ryy");  return(g)
+                        "X", "Rxx", "Y", "Ryy");  return(es)
 }
 
 # beta <- c(1.00, .01, .01)
