@@ -6,9 +6,8 @@ library(esc)
 #' This function converts form a beta coefficient to an effect size object
 #'
 beta2es <-function(Study, Type, Beta, SDy, N1, N2, Y, X, Ryy, Rxx){
-  recY <- 1; recX <- 1
-  es <- data.frame(study = NA, es = NA, weight = NA, sample.size = NA, se = NA, var = NA,
-                   ci.lo = NA, ci.hi = NA, measure = NA, X = NA, Rxx = NA, Y = NA, Ryy = NA)
+  rec <- 1; es <- data.frame(study = NA, es = NA, weight = NA, sample.size = NA, se = NA, var = NA,
+                             ci.lo = NA, ci.hi = NA, measure = NA, X = NA, Rxx = NA, Y = NA, Ryy = NA)
   while(rec <= length(Beta)){
     g <- esc::esc_beta(beta = Beta[rec], sdy = SDy[rec], grp1n = N1, grp2n = N2, es.type = Type, study = Study)
     # Binding all data
