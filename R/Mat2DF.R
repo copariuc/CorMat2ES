@@ -27,13 +27,15 @@ Mat2DF <- function(Study, Mat.Cor, Vars, n.X, s.Y, N, low.diag = T, diag.val = T
         Rxx <- diag(mat.cor)[recX]; Ryy <- diag(mat.cor)[recY]
 
         # Binding all data
-        es <- rbind(es, c(study, g, w, N, se, var, ci[1], ci[2], 'g', X, Rxx, Y, Ryy))
+        es <- rbind(es, c(Study, g, w, N, se, var, ci[1], ci[2], 'g', X, Rxx, Y, Ryy))
       }
       recY = recY + 1
     }
     recX = recX + 1; recY = 1
   }
 
+  colnames(es) <- c("study", "es", "weight", "sample.size", "se", "var", "ci.lo", "ci.hi", "measure",
+                   "X", "Rxx", "Y", "Ryy");
   # Returning results
   return(list(
     cor.mat = mat.cor,
