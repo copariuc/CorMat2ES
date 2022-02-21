@@ -12,9 +12,8 @@ Mat2DF <- function(Study, Mat.Cor, Vars, n.X, s.Y, N, low.diag = T, diag.val = T
   # Getting corelation matrix
   mat.cor <- lavaan::getCov(Mat.Cor, names = Vars, lower = low.diag, diagonal = diag.val)
   recX = 1; recY = 1; X = ""; Y = ""
-  es <- data.frame(Study = NA, es = NA, weight = NA, sample.size = NA, se = NA, var = NA,
+  es <- data.frame(study = NA, es = NA, weight = NA, sample.size = NA, se = NA, var = NA,
                    ci.lo = NA, ci.hi = NA, measure = NA, X = NA, Rxx = NA, Y = NA, Ryy = NA)
-
   while(recX <= n.X){
     X = colnames(mat.cor)[recX]
     while(recY <= length(Vars)) {
@@ -28,7 +27,7 @@ Mat2DF <- function(Study, Mat.Cor, Vars, n.X, s.Y, N, low.diag = T, diag.val = T
         Rxx <- diag(mat.cor)[recX]; Ryy <- diag(mat.cor)[recY]
 
         # Binding all data
-        es <- rbind(es, c(Study, g, w, N, se, var, ci[1], ci[2], 'g', X, Rxx, Y, Ryy))
+        es <- rbind(es, c(study, g, w, N, se, var, ci[1], ci[2], 'g', X, Rxx, Y, Ryy))
       }
       recY = recY + 1
     }
