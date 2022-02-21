@@ -4,7 +4,7 @@
 \alias{beta2es}
 \title{Conversion from a Beta coefficient to an effect size object}
 \usage{
-beta2es(study, type, beta, sd, n1, n2, X, Y, Rxx = 0, Ryy = 0)
+beta2es(Study, Type, Beta, SDy, N1, N2, Y, X, Ryy, Rxx)
 }
 \description{
 This function converts form a beta coefficient to an effect size object
